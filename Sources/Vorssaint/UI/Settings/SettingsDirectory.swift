@@ -358,6 +358,8 @@ enum SettingsDirectory {
                                       keywords: ["port", "ports", "listening", "socket", "PID", "kill port"]),
             ]),
             (categories.utilities, [
+                SettingsDirectoryItem(page: .streaming, title: "Sill", icon: "ipad.and.iphone",
+                                      keywords: [FeatureStrings.streaming(language).description, "iPhone", "iPad", "Sill"]),
                 SettingsDirectoryItem(page: .notch,
                                       title: FeatureStrings.notch(language).title,
                                       icon: "macbook",

@@ -237,6 +237,11 @@ final class FeatureRuntime: ObservableObject {
     /// permission it depends on) changes. Most on-demand tools have no binding;
     /// Media only binds so uninstalling it can cancel work already in flight.
     private static let bindings: [AppFeature: () -> Void] = [
+        .streaming: {
+            if !AppFeature.streaming.isAvailable {
+                MainActor.assumeIsolated { StreamingService.stopIfLoaded() }
+            }
+        },
         .switcher: {
             WindowUseTracker.shared.syncWithFeatures()
             AppSwitcher.shared.syncWithPreferences()

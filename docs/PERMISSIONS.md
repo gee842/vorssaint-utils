@@ -158,3 +158,7 @@ Download monitoring watches only the folder you choose in the system picker. Fol
 ## Resetting permissions
 
 To clear what you have granted and start over, follow the reset steps in the [troubleshooting guide](TROUBLESHOOTING.md#resetting-permissions), or use Settings under Advanced, which clears every permission, the login item and the closed lid rule while leaving the app in place.
+
+## Optional Sill streaming host
+
+The bundled Vorssaint Streaming Host requests its own Screen Recording, Accessibility and Local Network permissions through Streaming settings. Vorssaint’s existing grants do not imply these are granted. Start streaming explicitly, grant access there, then stop/start after a Screen Recording grant. See [streaming setup](SILL-STREAMING.md).

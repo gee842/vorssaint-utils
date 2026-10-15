@@ -88,3 +88,7 @@ This page describes how the current version of Vorssaint behaves. If the app's b
 ## Questions
 
 If anything here is unclear, open a question in [GitHub issues](https://github.com/vorssaint/vorssaint-utils/issues), or have a look at [support](../SUPPORT.md).
+
+## Optional Sill streaming
+
+When explicitly started, the bundled Sill host sends the selected Mac window or desktop to paired iPhone/iPad devices and accepts their input through Sill’s existing encrypted protocol. The host has separate permissions and machine-local identity, pairing state and logs. Stop or uninstall the feature to stop its host. See [streaming setup and boundaries](SILL-STREAMING.md).

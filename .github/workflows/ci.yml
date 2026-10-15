@@ -23,6 +23,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           persist-credentials: false
+          submodules: true
 
       - name: Verify toolchain
         run: |
@@ -35,6 +36,11 @@ jobs:
       - name: Selftest
         run: ./build/Vorssaint --selftest
 
+      - name: Streaming host lifecycle and packaging
+        run: |
+          ./Tests/streaming-host-controller/run.sh
+          python3 Tests/streaming-host-controller/check-bundle.py build/stage/Vorssaint.app
+
       - name: Unit tests
         run: ./build.sh --test
 
@@ -46,6 +52,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           persist-credentials: false
+          submodules: true
 
       - name: Build
         run: ./build.sh
@@ -55,6 +62,11 @@ jobs:
 
       - name: Package DMG
         run: ./Tools/make-dmg.sh
+
+      - name: Streaming host lifecycle and packaging
+        run: |
+          ./Tests/streaming-host-controller/run.sh
+          python3 Tests/streaming-host-controller/check-bundle.py build/stage/Vorssaint.app
 
       - name: Unit tests
         run: ./build.sh --test
